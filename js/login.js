@@ -3,10 +3,10 @@ var sign_up_btn = document.querySelector("#sign-up-btn");
 var container = document.querySelector(".container");
 
 // Toggle forms
-sign_up_btn.addEventListener("click", function () {
+sign_up_btn.addEventListener("click", () => {
   container.classList.add("sign-up-mode");
 });
-sign_in_btn.addEventListener("click", function () {
+sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
@@ -37,7 +37,7 @@ function validateUsername(input) {
 }
 
 // ===== Sign up validation =====
-signUpForm.addEventListener("submit", function (e) {
+signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
   var username = signUpForm.querySelector('input[type="text"]');
   var email = signUpForm.querySelector('input[type="email"]');
@@ -49,9 +49,7 @@ signUpForm.addEventListener("submit", function (e) {
   if (errorMsg) {
     showError(username, errorMsg);
     valid = false;
-  } else {
-    clearError(username);
-  }
+  } else clearError(username);
 
   // Email validation
   if (!email.value.trim()) {
@@ -62,9 +60,7 @@ signUpForm.addEventListener("submit", function (e) {
     if (!emailRegex.test(email.value)) {
       showError(email, "Email must be Gmail, Yahoo, or Hotmail");
       valid = false;
-    } else {
-      clearError(email);
-    }
+    } else clearError(email);
   }
 
   // Password validation
@@ -74,9 +70,7 @@ signUpForm.addEventListener("submit", function (e) {
   } else if (password.value.length < 6) {
     showError(password, "Password must be at least 6 characters");
     valid = false;
-  } else {
-    clearError(password);
-  }
+  } else clearError(password);
 
   if (valid) {
     // Check if email or username already exists
@@ -107,7 +101,7 @@ signUpForm.addEventListener("submit", function (e) {
 });
 
 // ===== Sign in validation =====
-signInForm.addEventListener("submit", function (e) {
+signInForm.addEventListener("submit", (e) => {
   e.preventDefault();
   var usernameOrEmailInput = signInForm.querySelector('input[type="text"]');
   var passwordInput = signInForm.querySelector('input[type="password"]');
@@ -131,22 +125,13 @@ signInForm.addEventListener("submit", function (e) {
   if (!valid) return;
 
   // Check stored data by username or email
-  var storedData = localStorage.getItem(usernameOrEmail);
+  const storedData = localStorage.getItem(usernameOrEmail);
   if (storedData) {
     var userData = JSON.parse(storedData);
     if (userData.password === password) {
       signInForm.reset();
-
-      // ✅ علم إن المستخدم سجل دخول
-      localStorage.setItem("isLoggedIn", "true");
-
-      // ✅ لو في redirect بعد تسجيل الدخول
-      if (typeof handleRedirectAfterLogin === "function") {
-        handleRedirectAfterLogin();
-      }
-
-      // ✅ لو مفيش redirect → يرجع للهوم
-      window.location.href = "../pagesHtml/index.html";
+      // Redirect to home page
+      window.location.href = "../index.html";
     } else {
       showError(passwordInput, "Incorrect password!");
     }
@@ -154,11 +139,10 @@ signInForm.addEventListener("submit", function (e) {
     showError(usernameOrEmailInput, "User not found!");
   }
 });
-
-// ===== Toggle password visibility =====
+// Toggle password visibility
 var toggleIcons = document.querySelectorAll(".password-toggle");
-toggleIcons.forEach(function (icon) {
-  icon.addEventListener("click", function () {
+toggleIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
     var passwordInput = icon.parentElement.querySelector(".password-input");
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
@@ -172,12 +156,33 @@ toggleIcons.forEach(function (icon) {
   });
 });
 
-// ===== Check URL parameter (mode) =====
+
+var sign_in_btn = document.querySelector("#sign-in-btn");
+var sign_up_btn = document.querySelector("#sign-up-btn");
+var container = document.querySelector(".container");
+
+// Toggle forms
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
+
+// ===== Validation =====
+var signInForm = document.querySelector(".sign-in-form");
+var signUpForm = document.querySelector(".sign-up-form");
+
+// Check URL parameter (mode)
 var params = new URLSearchParams(window.location.search);
 var mode = params.get("mode");
 
+// لو جاي من اللينك "Sign Up"
 if (mode === "register") {
   container.classList.add("sign-up-mode");
-} else {
+}
+
+// لو جاي من اللينك "Login" أو مفيش باراميتر
+else {
   container.classList.remove("sign-up-mode");
 }
