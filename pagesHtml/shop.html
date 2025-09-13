@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUVO</title>
+  <link rel="icon" type="img" href="../assets/images/icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/shop.css">
+</head>
+
+<body>
+
+  <!-- startNavBar -->
+  <header>
+    <a href="index.html" class="logo">MUVO</a>
+    <button id="menu-toggle" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services <i class="fas fa-caret-down" style="margin-left:5px;"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Museum Shop</a></li>
+          <li><a href="exhibitions.html">Exhibitions</a></li>
+          <li><a href="booking.html">Ticketes</a></li>
+          <li><a href="tour.html">Tour</a></li>
+        </ul>
+      </li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <form class="search-box" method="get">
+          <input type="text" name="q" placeholder="Search...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </li>
+      <li class="auth-buttons">
+        <a href="auth.html?mode=login" class="btn">Login</a>
+        <a href="auth.html?mode=register" class="btn-outline">Sign Up</a>
+      </li>
+    </ul>
+
+  </header>
+  <!-- endNavBar -->
+
+  <section id="shop">
+    <h2>𓂀Museum Shop𓂀</h2>
+
+    <!-- Products -->
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="../assets/images/shop2.jpg" alt="Souvenir">
+        <h3>Souvenir</h3>
+        <p class="price">400EGP</p>
+        <button class="add-to-cart" data-name="Souvenir" data-price="400">Add to Cart</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="../assets/images/shop1.jpg" alt="Pharaohs Book">
+        <h3>Pharaohs Book</h3>
+        <p class="price">500EGP</p>
+        <button class="add-to-cart" data-name="Pharaohs Book" data-price="500">Add to Cart</button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="../assets/images/shop3.jpg" alt="Cleopatra Pendant">
+        <h3>Cleopatra Pendant</h3>
+        <p class="price">300EGP</p>
+        <button class="add-to-cart" data-name="Cleopatra Pendant" data-price="300">Add to Cart</button>
+      </div>
+
+
+
+      <!-- Product 4-->
+      <div class="product">
+        <img src="../assets/images/shop9.jpg" alt="">
+        <h3>Ancient Maritime Guide</h3>
+        <p class="price">400EGP</p>
+        <button class="add-to-cart" data-name="Ancient Maritime Guide" data-price="400">Add to Cart</button>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product">
+        <img src="../assets/images/shop5.jpg" alt="Egyptian Mug">
+        <h3>Egyptian Mug</h3>
+        <p class="price">150EGP</p>
+        <button class="add-to-cart" data-name="Egyptian Mug" data-price="150">Add to Cart</button>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product">
+        <img src="../assets/images/shop6.jpg" alt="Tote bag Egyptian">
+        <h3>Tote bag Egyptian</h3>
+        <p class="price">200EGP</p>
+        <button class="add-to-cart" data-name="Tote bag Egyptian" data-price="200">Add to Cart</button>
+      </div>
+
+      <!-- Product 7-->
+      <div class="product">
+        <img src="../assets/images/shop7.jpg" alt=" Notebook">
+        <h3> Notebook</h3>
+        <p class="price">100EGP</p>
+        <button class="add-to-cart" data-name="A Notebook" data-price="100">Add to Cart</button>
+      </div>
+
+      <!-- Product8  -->
+      <div class="product">
+        <img src="../assets/images/shop8.jpg" alt="Egyptian Bookmark">
+        <h3>Egyptian Bookmark</h3>
+        <p class="price">50EGP</p>
+        <button class="add-to-cart" data-name="Egyptian Bookmark" data-price="50">Add to Cart</button>
+      </div>
+
+
+      <!-- Product9  -->
+      <div class="product">
+        <img src="../assets/images/shop4.jpg" alt="EgyptianPuzzle">
+        <h3>Puzzle</h3>
+        <p class="price">350EGP</p>
+        <button class="add-to-cart" data-name="Egyptian Puzzle" data-price="350">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div id="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="total">Total: EGP0</p>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </section>
+
+  <!-- startfooter -->
+  <footer>
+    <div class="footerContainer">
+      <div class="footerflix">
+        <div class="footerColumn">
+          <div class="footerTitle">MUVO</div>
+          <div class="footerDescription">MUVO is your gateway to unforgettable museum experiences. Explore
+            fascinating exhibitions, book tickets effortlessly, and enjoy a easy, inspiring visit every
+            time.</div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">USEFUL LINKS</div>
+          <div class="footerLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Museum Shop</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="booking.html">Ticketes</a>
+            <a href="tour.html">Tour</a>
+            <a href="About.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">OUR TEAM</div>
+          <div class="footerLinks">
+            <a href="https://www.linkedin.com/in/kareem-w-2a2769325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank">Kareem Hendawy</a>
+            <a href="https://www.linkedin.com/in/nadine-sady-273624320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank">Nadine Sady</a>
+            <a href="https://www.linkedin.com/in/reem-hassan-57571a382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank">Reem Hassan</a>
+            <a href="https://www.linkedin.com/in/nadia-sabry-432756382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank">Nadia Sabry</a>
+          </div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">ACCOUNT</div>
+          <div class="footerLinks">
+            <a href="auth.html?mode=login">Login</a>
+            <a href="auth.html?mode=register">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <div class="footerCopyright">
+          © 2025 | Made with care by <span> Vertex Team </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- endFooter -->
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/shop.js"></script>
+</body>
+
+</html>

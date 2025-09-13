@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUVO</title>
+  <link rel="icon" type="img" href="../assets/images/icon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="../css/booking.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- startNavBar -->
+  <header>
+    <a href="index.html" class="logo">MUVO</a>
+    <button id="menu-toggle" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services <i class="fas fa-caret-down" style="margin-left:5px;"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="shop.html">Museum Shop</a></li>
+          <li><a href="exhibitions.html">Exhibitions</a></li>
+          <li><a href="booking.html">Ticketes</a></li>
+          <li><a href="tour.html">Tour</a></li>
+        </ul>
+      </li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <form class="search-box" method="get">
+          <input type="text" name="q" placeholder="Search...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </li>
+      <li class="auth-buttons">
+        <a href="auth.html?mode=login" class="btn">Login</a>
+        <a href="auth.html?mode=register" class="btn-outline">Sign Up</a>
+      </li>
+    </ul>
+
+  </header>
+  <!-- endNavBar -->
+
+  <!-- Header -->
+  <section class="text-center my-4">
+    <h2>Book Your Ticket</h2>
+    <p class="text-muted">Don’t Miss the Adventure, Make Memories That Last Forever</p>
+  </section>
+
+  <!-- Forms -->
+  <div class="container form-container">
+
+    <!-- Booking Form -->
+    <form id="ticketBookingForm" class="booking-form-box">
+      <div class="row mb-3">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="secondName">Second Name</label>
+          <input type="text" class="form-control" id="secondName">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="emailAddress">Email</label>
+          <input type="email" class="form-control" id="emailAddress" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phoneNumber">Phone</label>
+          <input type="tel" class="form-control" id="phoneNumber" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="bookingDate">Booking Date</label>
+          <input type="date" class="form-control" id="bookingDate" required>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between gap-3 mb-4">
+        <div class="ticket-type-option flex-fill" data-price="10" data-type="Student">
+          🎓 <br> <strong>Student</strong> <br> $10
+        </div>
+        <div class="ticket-type-option flex-fill" data-price="20" data-type="Egyptian">
+          🏛️ <br> <strong>Egyptian</strong> <br> $20
+        </div>
+        <div class="ticket-type-option flex-fill" data-price="40" data-type="Foreigner">
+          🌍 <br> <strong>Foreigner</strong> <br> $40
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="ticketQuantity">Quantity</label>
+        <input type="number" id="ticketQuantity" class="form-control" min="1" value="1" required>
+      </div>
+
+      <p class="fs-5">Total: $<span id="totalPrice">0</span></p>
+
+      <button type="button" class="btn btn-primary-custom w-100" id="goToPaymentBtn">Proceed to Payment</button>
+    </form>
+
+    <!-- Payment Section -->
+    <div id="paymentContainer" class="booking-form-box hidden">
+      <h3 class="text-center mb-3">Payment</h3>
+      <p id="bookingSummary"></p>
+      <form id="paymentForm">
+        <div class="mb-3">
+          <label for="cardNumberInput">Card Number</label>
+          <input type="text" class="form-control" id="cardNumberInput" maxlength="16" required>
+        </div>
+        <div class="mb-3">
+          <label for="cardExpiry">Expiry Date</label>
+          <input type="month" class="form-control" id="cardExpiry" required>
+        </div>
+        <div class="mb-3">
+          <label for="cardCVV">CVV</label>
+          <input type="text" class="form-control" id="cardCVV" maxlength="3" required>
+        </div>
+        <button type="submit" class="btn btn-primary-custom w-100">Confirm Payment</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- startfooter -->
+  <footer>
+    <div class="footerContainer">
+      <div class="footerflix">
+        <div class="footerColumn">
+          <div class="footerTitle">MUVO</div>
+          <div class="footerDescription">MUVO is your gateway to unforgettable museum experiences. Explore
+            fascinating exhibitions, book tickets effortlessly, and enjoy a easy, inspiring visit every
+            time.</div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">USEFUL LINKS</div>
+          <div class="footerLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Museum Shop</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="booking.html">Ticketes</a>
+            <a href="tour.html">Tour</a>
+            <a href="About.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">OUR TEAM</div>
+          <div class="footerLinks">
+            <a href="https://www.linkedin.com/in/kareem-w-2a2769325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank">Kareem Hendawy</a>
+            <a href="https://www.linkedin.com/in/nadine-sady-273624320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank">Nadine Sady</a>
+            <a href="https://www.linkedin.com/in/reem-hassan-57571a382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank">Reem Hassan</a>
+            <a href="https://www.linkedin.com/in/nadia-sabry-432756382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank">Nadia Sabry</a>
+          </div>
+        </div>
+        <div class="footerColumn">
+          <div class="footerTitle">ACCOUNT</div>
+          <div class="footerLinks">
+            <a href="auth.html?mode=login">Login</a>
+            <a href="auth.html?mode=register">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <div class="footerCopyright">
+          © 2025 | Made with care by <span> Vertex Team </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- endFooter -->
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/boooking.js"></script>
+</body>
+
+</html>
