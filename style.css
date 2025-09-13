@@ -804,6 +804,23 @@ ul li a:hover {
     width: 95%;
     padding: 0.8rem 1rem;
   }
+  
+    /* الخلفية الرئيسية */
+  .home {
+    min-height: auto; /* إزالة الحد الأدنى للطول */
+    height: auto;     /* يتيح لها التمدد حسب المحتوى */
+    padding: 2rem 0;  /* مسافة علوية وسفلية */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* الخلفية الرمادية */
+  .contener {
+    min-height: auto; /* إزالة الطول الثابت */
+    padding: 1.5rem; /* ضبط البادينج */
+    width: 95%;
+  }
+
 
   ul {
     position: absolute;
@@ -1009,7 +1026,17 @@ ul li a:hover {
   .box {
     padding: clamp(40px, 5vw, 24px);
   }
+    .home {
+    min-height: auto;
+    height: auto;
+    padding: 1rem 0;
+  }
 
+  .contener {
+    min-height: auto;
+    padding: 1rem;
+    width: 95%;
+  }
   .textContener {
     width: 100%;
     padding: clamp(12px, 5vw, 18px);
