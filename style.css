@@ -14,7 +14,7 @@ body {
 
 /* ===== Home Section ===== */
 .home {
-  background: url(../assets/images/1.jpg) center/cover no-repeat;
+  background: url(assets/images/1.jpg) center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   justify-content: center;
